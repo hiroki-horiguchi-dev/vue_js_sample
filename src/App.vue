@@ -69,6 +69,17 @@ const isButtonDisabled = ref(false);
           :disabled="null" -> true (これ厄介), 
           :disabled="" ->  error [plugin:vite:vue] v-bind is missing expression.   
           -->
+      <!-- 複数の属性を動的にバインドさせる -->
+       <!-- const objectOfAttrs = {
+           id: 'container',
+           class: 'wrapper',
+           style: 'background-color:green'
+        } -->
+        <!-- 何これ、クラス？リスト？と思ったが、オブジェクトらしい。key, value を持つ JavaScript オブジェクトだそうで -->
+        <!-- 辞書型と理解して良さそう -->
+        <!-- 以下のように v-bind を引数なしで用いると、これらの複数の属性を 1 つの要素にバインドすることができます: -->
+        <!--  -->
+        <div v-bind="objectOfAttrs"></div>
     </div>
   </header>
 
